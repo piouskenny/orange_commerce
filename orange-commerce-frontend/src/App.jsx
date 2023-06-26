@@ -2,7 +2,12 @@ import React from "react";
 import Home from "./Pages/Products/Home";
 
 const App = () => {
-  return <Home />;
+  return(
+    <>
+      <Home />
+    </>
+  ) ;
+
 };
 
 export default App;
