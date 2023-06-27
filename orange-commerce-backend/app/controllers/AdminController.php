@@ -157,6 +157,6 @@ class AdminController
 
         echo json_encode(['success' => "Login successful"]);
 
-        return header('Location: /api/v1/user-profile?username=' . urlencode($username) . '&token=' . urlencode($token));
+        return header('Location: /api/v1/admin-profile?username=' . urlencode($username) . '&token=' . urlencode($token));
     }
 }
