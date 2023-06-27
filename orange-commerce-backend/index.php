@@ -2,6 +2,7 @@
 
 require "vendor/autoload.php";
 
+use App\controllers\AdminController;
 use App\controllers\UserController;
 
 use App\Router;
@@ -21,4 +22,8 @@ $router->post('/api/v1/signup/', [new UserController, 'signup']);
 $router->post('/api/v1/login/', [new UserController, 'login']);
 
 
+// admin Authebtication route
+$router->get('/api/v1/admin-profile', [new AdminController, 'profile']);
+$router->post('/api/v1/admin-signup/', [new AdminController, 'signup']);
+$router->post('/api/v1/admin-login/', [new AdminController, 'login']);
 $router->resolve();

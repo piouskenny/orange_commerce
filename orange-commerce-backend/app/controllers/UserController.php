@@ -76,6 +76,7 @@ class UserController
         }
 
         $json = file_get_contents('php://input');
+        
         $data = json_decode($json, true);
 
         if ($data === null) {
@@ -86,6 +87,8 @@ class UserController
         $username = $data['username'] ?? '';
         $email = $data['email'] ?? '';
         $password = md5($data['password']) ?? '';
+        $cart = 0;
+        $wishlist = 0;
 
 
         if ($username === '' || $email === '' || $password === '') {
@@ -95,7 +98,7 @@ class UserController
 
         $database = new Connection;
 
-        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        $sql = "INSERT INTO users (username, email, cart, wishlist, password) VALUES ('$username', '$email', '$cart', '$wishlist', '$password')";
 
         $database->base_query($sql);
         if ($database) {
