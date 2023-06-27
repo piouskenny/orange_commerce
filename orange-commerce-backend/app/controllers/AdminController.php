@@ -43,7 +43,7 @@ class AdminController
 
         $database = new Connection;
 
-        $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+        $sql = "SELECT * FROM admin WHERE username = '$username' LIMIT 1";
 
         $query = $database->base_query($sql);
 
@@ -95,7 +95,7 @@ class AdminController
 
         $database = new Connection;
 
-        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+        $sql = "INSERT INTO admin (username, email, password) VALUES ('$username', '$email', '$password')";
 
         $database->base_query($sql);
         if ($database) {
@@ -125,7 +125,7 @@ class AdminController
 
         $database = new Connection;
 
-        $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+        $sql = "SELECT * FROM admin WHERE username = '$username' LIMIT 1";
 
         $query = $database->base_query($sql);
 
