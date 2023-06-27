@@ -20,7 +20,7 @@ class Connection
         $this->host = "localhost";
         $this->username = "root";
         $this->password = "";
-        $this->dbname = "user_auth_api";
+        $this->dbname = "orange_commerce";
 
         $this->conn = mysqli_connect($this->host, $this->username, $this->password, $this->dbname);
 
