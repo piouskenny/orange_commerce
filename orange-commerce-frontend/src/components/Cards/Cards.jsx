@@ -34,17 +34,31 @@ const CardContent = [
 
 const Cards = () => {
   return (
-    <div className="lg:flex justify-center items-center content-center mt-10 space-y-5">
-      {CardContent.map((content) => (
-        <SingleCards
-          Image={content.Image}
-          title={content.title}
-          Category={content.Category}
-          Price={content.Price}
-          Description={content.Description}
-        />
-      ))}
-    </div>
+    <>
+      <div className="lg:flex justify-center items-center content-center mt-10 lg:space-y-0 space-y-5 lg:gap-4">
+        {CardContent.map((content) => (
+          <SingleCards
+            Image={content.Image}
+            title={content.title}
+            Category={content.Category}
+            Price={content.Price}
+            Description={content.Description}
+          />
+        ))}
+      </div>
+
+      <div className="lg:flex justify-center items-center content-center mt-10 lg:space-y-0 space-y-5 lg:gap-4 pb-40">
+        {CardContent.map((content) => (
+          <SingleCards
+            Image={content.Image}
+            title={content.title}
+            Category={content.Category}
+            Price={content.Price}
+            Description={content.Description}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

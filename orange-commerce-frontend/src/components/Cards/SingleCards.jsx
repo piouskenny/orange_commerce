@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleCards = ({ Image, title, Category, Description, Price }) => {
   return (
-    <div class="col-span-1 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="col-span-1 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img class="p-8 rounded-t-lg" src={Image} alt="product image" />
       </a>
@@ -68,12 +68,12 @@ const SingleCards = ({ Image, title, Category, Description, Price }) => {
           </span>
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-3xl font-bold text-gray-900 dark:text-white">
+          <span class="text-2xl font-bold text-gray-900 dark:text-white">
             {Price}
           </span>
           <a
             href="#"
-            class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+            class="text-white bg-orange-400 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
           >
             Add to cart
           </a>

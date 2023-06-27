@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="w-full lg:h-[30vh] h-[20vh] flex justify-center content-center items-center brandBg rounded-2xl">
+    <div className="w-full lg:h-[40vh] h-[28vh] flex justify-center content-center items-center brandBg rounded-2xl">
       <div className="text-center">
         <h1 className="text-white lg:text-5xl lg:font-bold text-3xl font-semibold ">
           Orange Commerce
