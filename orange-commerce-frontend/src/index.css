@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .brandBg {
-    @apply bg-gradient-to-tr from-orange-400 to-orange-100
+    @apply bg-gradient-to-tr from-orange-400 to-[#FFDF40]
 }
 
 body {

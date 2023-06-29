@@ -3,7 +3,7 @@ import React from "react";
 const Nav = () => {
   return (
     <div
-      className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2
+      className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2  backdrop-blur-md border border-gray-200 rounded-full bottom-4 left-1/2
     "
     >
       <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
