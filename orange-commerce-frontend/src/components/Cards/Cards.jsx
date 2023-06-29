@@ -32,7 +32,7 @@ const CardContent = [
   },
 ];
 
-const Cards = () => {
+const Cards = ({ cart_item, setCart_item }) => {
   return (
     <>
       <div className="lg:flex justify-center items-center content-center mt-10 lg:space-y-0 space-y-5 lg:gap-4">
@@ -43,6 +43,8 @@ const Cards = () => {
             Category={content.Category}
             Price={content.Price}
             Description={content.Description}
+            cart_item={cart_item}
+            setCart_item={setCart_item}
           />
         ))}
       </div>

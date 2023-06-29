@@ -8,15 +8,14 @@ import Cart from "../../components/Cart/cart";
 const Home = () => {
   const [open, setOpen] = useState(false); // Initialize the open state
   const [cart_item, setCart_item] = useState(0);
-  
+
   return (
     <body>
-      <Hero setOpen={setOpen} /> {/* Pass setOpen function to Hero component */}
+      <Hero setOpen={setOpen}  cart_item={cart_item} setCart_item={setCart_item}/>
       <Categories />
-      <Cards />
+      <Cards  cart_item={cart_item} setCart_item={setCart_item} />
       <Nav />
-      <Cart open={open} setOpen={setOpen} />{" "}
-      {/* Pass open state and setOpen function to Cart component */}
+      <Cart open={open} setOpen={setOpen} />
     </body>
   );
 };

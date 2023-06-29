@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  user-select: none;
+}
+
 .brandBg {
-    @apply bg-gradient-to-tr from-orange-400 to-[#FFDF40]
+  @apply bg-gradient-to-tr from-orange-400 to-[#FFDF40];
 }
 
 body {
-    @apply lg:mx-10 mx-2 lg:mt-4 mt-2
+  @apply lg:mx-10 mx-2 lg:mt-4 mt-2;
 }

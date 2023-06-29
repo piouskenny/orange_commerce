@@ -1,6 +1,10 @@
 import React from "react";
 
-const SingleCards = ({ Image, title, Category, Description, Price }) => {
+const SingleCards = ({ Image, title, Category, Description, Price, setCart_item, cart_item }) => {
+  const hande_cart_item = () => {
+    setCart_item(cart_item +=1 )
+  } 
+
   return (
     <div class="col-span-1 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
@@ -71,12 +75,13 @@ const SingleCards = ({ Image, title, Category, Description, Price }) => {
           <span class="text-2xl font-bold text-gray-900 dark:text-white">
             {Price}
           </span>
-          <a
-            href="#"
-            class="text-white bg-orange-400 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+          <div
+          
+          onClick={hande_cart_item}
+            class="text-white bg-orange-400 hover:bg-orange-600 focus:ring-4 focus:outline-none cursor-pointer focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
           >
             Add to cart
-          </a>
+          </div>
         </div>
       </div>
     </div>

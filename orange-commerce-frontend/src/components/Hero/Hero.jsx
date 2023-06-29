@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import Cart from "../Cart/cart"; // Assuming the correct path to the Cart component
 
-const Hero = ({open, setOpen}) => {
+const Hero = ({open, setOpen, cart_item}) => {
 
   const handleClick = () => {
     setOpen(true);
@@ -18,7 +18,7 @@ const Hero = ({open, setOpen}) => {
         >
           <div className="flex justify-between space-x-4 font-bold rounded-md shadow-md lg:px-6 lg:py-2 px-4 py-1 bg-white bg-opacity-50 backdrop-blur-lg">
             <ShoppingCartIcon className="h-6 w-6 text-black" aria-hidden="true" />
-            <span>0</span>
+            <span>{cart_item}</span>
           </div>
         </div>
 
