@@ -16,6 +16,9 @@ class AdminController
 
     public function __construct()
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: *");
+
         $redisOptions = [
             'scheme' => 'tcp',
             'host' => '127.0.0.1',
@@ -25,17 +28,10 @@ class AdminController
         $this->redis = new Client($redisOptions);
     }
 
-    public function handleCorsHeaders()
-    {
-        header("Access-Control-Allow-Origin: http://localhost:5173");
-        header("Access-Control-Allow-Methods: POST");
-        header("Access-Control-Allow-Headers: Content-Type");
-    }
 
 
     public function profile()
     {
-        $this->handleCorsHeaders();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die(json_encode("The GET request is not supported for this route"));
@@ -80,7 +76,8 @@ class AdminController
 
     public function signup()
     {
-        $this->handleCorsHeaders();
+
+
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             die(json_encode("The GET request is not supported for this route"));
         }
@@ -117,7 +114,6 @@ class AdminController
 
     public function login()
     {
-        $this->handleCorsHeaders();
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             die(json_encode("The GET request is not supported for this route"));
         }
@@ -143,7 +139,7 @@ class AdminController
 
 
         if (!$user) {
-            echo json_encode(['failed' => "No Username foundd for $username"]);
+            echo json_encode(['failed' => "Invalid user details"]);
             return;
         }
 
@@ -165,8 +161,10 @@ class AdminController
         $this->redis->del($rateLimitKey);
         $this->redis->del('last_failed_login_time:' . $username);
 
-        echo json_encode(['success' => "Login successful"]);
+        echo json_encode(['success' => "Login successful", 'username' => $username, 'token' => $token ]);
 
-        return header('Location: /api/v1/admin-profile?username=' . urlencode($username) . '&token=' . urlencode($token));
+
+
+        // return header('Location: /api/v1/admin-profile?username=' . urlencode($username) . '&token=' . urlencode($token));
     }
 }
