@@ -1,6 +1,6 @@
 # Ecommerce Website
 
-![React Logo](react-logo.png) ![PHP Logo](php-logo.png)
+![React Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) ![PHP Logo](https://commons.wikimedia.org/wiki/File:PHP-logo.svg)
 
 This repository contains the source code for an Ecommerce website built using React and PHP. The website provides various features for users, including adding items to the cart, an admin dashboard to upload products, user account management, and seamless checkout and instant payment integration with Paystack.
 
