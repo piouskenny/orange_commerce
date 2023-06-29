@@ -25,8 +25,17 @@ class AdminController
         $this->redis = new Client($redisOptions);
     }
 
+    public function handleCorsHeaders()
+    {
+        header("Access-Control-Allow-Origin: http://localhost:5173");
+        header("Access-Control-Allow-Methods: POST");
+        header("Access-Control-Allow-Headers: Content-Type");
+    }
+
+
     public function profile()
     {
+        $this->handleCorsHeaders();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die(json_encode("The GET request is not supported for this route"));
@@ -71,6 +80,7 @@ class AdminController
 
     public function signup()
     {
+        $this->handleCorsHeaders();
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             die(json_encode("The GET request is not supported for this route"));
         }
@@ -107,7 +117,7 @@ class AdminController
 
     public function login()
     {
-
+        $this->handleCorsHeaders();
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             die(json_encode("The GET request is not supported for this route"));
         }
