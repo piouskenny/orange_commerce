@@ -1,6 +1,6 @@
 # Ecommerce Website
 
-![React Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) ![PHP Logo](https://commons.wikimedia.org/wiki/File:PHP-logo.svg)
+![React Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) ![PHP Logo](https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg)
 
 This repository contains the source code for an Ecommerce website built using React and PHP. The website provides various features for users, including adding items to the cart, an admin dashboard to upload products, user account management, and seamless checkout and instant payment integration with Paystack.
 
@@ -12,7 +12,7 @@ This repository contains the source code for an Ecommerce website built using Re
 
 ## Setup Instructions
 
-1. Clone the repository: `git clone https://github.com/piouskenny/orange-commerce.git`
+1. Clone the repository: `git clone https://github.com/piouskenny/orange_commerce.git`
 2. Navigate to the project directory: `cd ecommerce-website`
 3. Install the required dependencies for React: `npm install`
 4. Set up the PHP backend and REST API. (Details provided in the next section)
