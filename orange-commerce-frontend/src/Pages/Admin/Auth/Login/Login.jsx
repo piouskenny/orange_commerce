@@ -19,25 +19,26 @@ const Login = () => {
 
   const sendRequest = (event) => {
     event.preventDefault();
-
-    console.log(formValues);
     axios
       .post("http://localhost:8000/api/v1/admin-login/", formValues)
 
       .then((response) => {
         console.log(response.data);
-
         if (response.data["failed"]) {
           setMessage(response.data["failed"]);
         } else {
           const userData = response.data;
-          return navigate("/admin_dashboard");
+
+          return navigate("/admin_dashboard", {
+            state: { userData: userData },
+          });
         }
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   return (
     <section className="">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">

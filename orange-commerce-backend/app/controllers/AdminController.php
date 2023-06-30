@@ -30,16 +30,16 @@ class AdminController
 
 
 
-    public function profile()
+    public function profile($username, $token)
     {
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            die(json_encode("The GET request is not supported for this route"));
-        }
+        // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //     die(json_encode("The GET request is not supported for this route"));
+        // }
 
 
-        $username = $_GET['username'] ?? "";
-        $token = $_GET['token'] ?? "";
+        // $username = $_GET['username'] ?? "";
+        // $token = $_GET['token'] ?? "";
 
         if ($username == "" || $token == "") {
             echo json_encode(["error" => "sorry you have to login to access this page"]);
@@ -161,10 +161,11 @@ class AdminController
         $this->redis->del($rateLimitKey);
         $this->redis->del('last_failed_login_time:' . $username);
 
-        echo json_encode(['success' => "Login successful", 'username' => $username, 'token' => $token ]);
+        // echo json_encode(['success' => "Login successful", 'username' => $username, 'token' => $token ]);
 
+        return $this->profile($username, $token);
 
-
+        
         // return header('Location: /api/v1/admin-profile?username=' . urlencode($username) . '&token=' . urlencode($token));
     }
 }
