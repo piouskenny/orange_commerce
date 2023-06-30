@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState({
     username: "",
     password: "",
@@ -29,9 +31,7 @@ const Login = () => {
           setMessage(response.data["failed"]);
         } else {
           const userData = response.data;
-
-          console.log(userData);
-        //   history.push("/admin_dashboard", { userData });
+          return navigate("/admin_dashboard");
         }
       })
       .catch((error) => {
